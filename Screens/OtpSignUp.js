@@ -1,28 +1,25 @@
-import React from "react";
+import React, { useId } from "react";
 import { useState, useEffect, useContext } from "react";
 import { Alert, View, Image, StyleSheet, Text, TouchableOpacity, ScrollView, ImageBackground} from "react-native";
 import FormInputs from "../Components/FormInputs";
 import { windowHeight } from "../utils/Dimension";
-import firestore from '@react-native-firebase/firestore';
 import auth from "@react-native-firebase/auth";
 
-const OtpSignUp = ({navigation}) => {
-
+  const OtpSignUp = ({navigation}) => {
   const [phoneNumber, setPhoneNumber] = useState("");
-
   const [code, setCode] = useState(null);
   const [ confirm, setConfirm ] = useState(null);
   const [otp, setOtp]=useState(false);
 
   const signIn = async() => {
     if(!phoneNumber){
-      Alert.alert('Error', 'Please Enter number')
+      Alert.alert('', 'Please Enter number');
     }
     else{
     try{
       const confirmation =  await auth().signInWithPhoneNumber(phoneNumber);
-      setConfirm(confirmation)
-      setOtp(true)
+      setConfirm(confirmation);
+      setOtp(true);
     }
     catch(error) {
      switch(error.code){
@@ -47,11 +44,24 @@ const OtpSignUp = ({navigation}) => {
     if(!code){
       Alert.alert('', 'Please enter your OTP')
     }
+    else if(confirm==null){
+      Alert.alert('', 'Please enter OTP only after triggering')
+    }
     else{  
     return confirm.confirm(code)
-    .then(() => {})
-    .catch(err => Alert.alert(err.code, err.message))
-    }
+    .then( () => {})
+    .catch(
+        (err) => {
+          if(err.code=='auth/invalid-verification-code'){
+            Alert.alert('','Invalid code. Please try correct code or resend to correct number and try.');
+          }
+          else{
+            Alert.alert(err.code,err.message);
+          }
+        }
+    )
+  }
+    
 }
     return(
         // <ImageBackground style={styles.container} source={{uri:'https://i.pinimg.com/originals/53/08/f4/5308f4249db3ff950a3ccc207006f593.jpg'}}>
@@ -67,9 +77,7 @@ const OtpSignUp = ({navigation}) => {
                <View style={{flex: 1, height: 1.2, backgroundColor:"grey"}} />
 
                <View>
-
                    <Text style={styles.hori}>SignIn / SignUp</Text>
-
                </View>
 
                <View style={{flex: 1, height: 1.2, backgroundColor: "grey", }} />

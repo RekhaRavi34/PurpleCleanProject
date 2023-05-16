@@ -14,7 +14,7 @@ const persons = [{
       des4:'Dry vacuuming of all fabrics, including sofa, carpet, mattress and curtains',
       des5:'Thorough cleaning of all hard to reach areas and fixtures, including balcony, exhaust fan, ceiling fan, etc.',
       uri: "https://i.pinimg.com/736x/13/a6/fe/13a6fe03c848683d7406137f80c52402.jpg",
-      image:[{img: 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/living-room-ideas-white-palette-1639423211.jpg'},{img: 'https://www.kutchina.com/wp-content/uploads/2020/07/straight-line-2-min.jpg'},{img: 'https://foyr.com/learn/wp-content/uploads/2019/01/master-bedroom.png'}],
+      image:[{img: 'https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/living-room-ideas-white-palette-1639423211.jpg'},{img: 'https://foyr.com/learn/wp-content/uploads/2019/01/master-bedroom.png'}],
       price:'₹5,499/-',
       
     },
@@ -78,7 +78,7 @@ const persons = [{
           des4:'Floor mats Cleaning, Dashboard Polished',
           des5:'Duration: 30 Mins',
           uri: "https://www.clipartkey.com/mpngs/m/106-1069483_the-works-transparent-background-car-wash-clipart.png",
-          image:[{img:'https://www.drivespark.com/img/2022/07/car-wash-tips-02-1657808496.jpg'}, {img:'https://autocarspa.files.wordpress.com/2017/03/car-washing.jpg'}],
+          image:[{img:'https://autocarspa.files.wordpress.com/2017/03/car-washing.jpg'}],
           price:'₹5,499/-',
          
         },
@@ -117,7 +117,7 @@ const persons = [{
             des2:'A fumigation machine is used to spread the chemical which kills harmful viruses and bacteria.',
             des3:'Wiping the high-touch areas such as door handles, switchboards etc',
             uri: "https://dynamicpestcontrol.in/wp-content/uploads/2021/07/senitization-services-for-hospitals-500x500-1.jpg",
-            image:[{img:'https://thumbs.dreamstime.com/b/plumbing-tools-materials-22001483.jpg'}, {img:'https://www.betterteam.com/images/plumber-job-description-3999x2999-20201118.jpeg'}],
+            image:[{img:'https://resize.indiatvnews.com/en/resize/newbucket/730_-/2020/08/home-senitizing-service-500x500-1597729399.jpg'}, {img:'https://5.imimg.com/data5/RV/NN/ZH/SELLER-9926515/htr-image-35700-500x500.jpg'}],
             price:'₹5,499/-',
           },
   ];

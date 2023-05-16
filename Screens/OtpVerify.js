@@ -52,11 +52,9 @@ const styles = StyleSheet.create({
         padding: 20,
         paddingTop: 0,
         flex:1,
-        
       },
       
-      text: {
-        
+      text: { 
         fontSize: 25,
         fontWeight: '700',
         marginBottom: 10,

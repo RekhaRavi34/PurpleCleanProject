@@ -43,11 +43,11 @@ export default class DetailPage extends React.Component{
                  
                     <Text style={styles.title}>{this.props.route.params.title}</Text>
                     <Text style={styles.description}>Description</Text>
-                    <Text>{this.props.route.params.des1}</Text>
-                    <Text>{this.props.route.params.des2}</Text>
-                    <Text>{this.props.route.params.des3}</Text>
-                    <Text>{this.props.route.params.des4}</Text>
-                    <Text>{this.props.route.params.des5}</Text>
+                    <Text style={styles.descriptiontext}>{this.props.route.params.des1}</Text>
+                    <Text style={styles.descriptiontext}>{this.props.route.params.des2}</Text>
+                    <Text style={styles.descriptiontext}>{this.props.route.params.des3}</Text>
+                    <Text style={styles.descriptiontext}>{this.props.route.params.des4}</Text>
+                    <Text style={styles.descriptiontext}>{this.props.route.params.des5}</Text>
                     
                     {/* <Text style={styles.pricetext}>Charges :</Text>
                     <View style={styles.rowcol}>
@@ -105,7 +105,10 @@ const styles = StyleSheet.create(
             fontSize:16,
             fontWeight:'500',
             fontStyle:'italic',
-            color:"#808080"
+            color:"black"
+        },
+        descriptiontext:{
+            color:"black"
         },
         rowcol:{
             flexDirection:"row"

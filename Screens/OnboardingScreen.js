@@ -5,7 +5,7 @@ import Onboarding from 'react-native-onboarding-swiper';
 
 const Dots = ({selected}) => {
     let backgroundColor;
-    backgroundColor = selected ? 'white' : 'grey';
+    backgroundColor = selected ? '#730099' : 'grey';
     return (
         <View 
             style={{
@@ -24,7 +24,7 @@ const Skip = ({...props}) => (
         style={{marginHorizontal:10}}
         {...props}
     >
-        <Text style={{fontSize:16, color:"grey"}}>Skip</Text>
+        <Text style={{fontSize:16, color:"#730099"}}>Skip</Text>
     </TouchableOpacity>
 );
 
@@ -33,7 +33,7 @@ const Next = ({...props}) => (
         style={{marginHorizontal:10}}
         {...props}
     >
-        <Text style={{fontSize:16, color:"grey"}}>Next</Text>
+        <Text style={{fontSize:16, color:"#730099"}}>Next</Text>
     </TouchableOpacity>
 );
 
@@ -42,7 +42,7 @@ const Done = ({...props}) => (
         style={{marginHorizontal:10}}
         {...props}
     >
-        <Text style={{fontSize:16, color:"grey"}}>Done</Text>
+        <Text style={{fontSize:16, color:"#730099"}}>Done</Text>
     </TouchableOpacity>
 );
 
@@ -58,28 +58,28 @@ const OnboardingScreen = ({navigation}) => {
         onDone={() => navigation.navigate("OtpSignUp")}
         pages={[
           {
-            backgroundColor: '#a6e4d0',
+            backgroundColor: '#CBC3E3',
             image: <Image style={styles.image} source={require('../assets/image1.png')} />,
             title: 'Messy home?',
-            titleStyles:{fontWeight:'500'},
+            titleStyles:{fontWeight:'500', color:'#730099'},
             subtitle: 'Shine up your homes with us.',
-            subTitleStyles:{color:'grey'}
+            subTitleStyles:{color:'#730099'}
           },
           {
-            backgroundColor: '#99ff99',
+            backgroundColor: '#CBC3E3',
             image: <Image style={styles.image} source={require('../assets/image2.png')} />,
             title: 'Affordable Rates',
-            titleStyles:{fontWeight:'500'},
+            titleStyles:{fontWeight:'500', color:'#730099'},
             subtitle: 'Cheap yet effective cleaning services.',
-            subTitleStyles:{color:'grey'}
+            subTitleStyles:{color:'#730099'}
           },
           {
-            backgroundColor: '#e9bcbe',
+            backgroundColor: '#CBC3E3',
             image: <Image style={styles.image} source={require('../assets/image3.png')} />,
             title: 'DoorStep Service',
-            titleStyles:{fontWeight:'500'},
+            titleStyles:{fontWeight:'500', color:'#730099'},
             subtitle: 'Cleaning experts at your doorstep.',
-            subTitleStyles:{color:'grey'}
+            subTitleStyles:{color:'#730099'}
           },
         ]}
       />

@@ -1,45 +1,76 @@
-import React from 'react';
-import {View, SafeAreaView, StyleSheet, Image,Text} from 'react-native';
+import React, { useId } from 'react';
+import {View, SafeAreaView, StyleSheet, Image,Text, Button} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import {windowHeight, windowWidth} from '../utils/Dimension';
+import auth from "@react-native-firebase/auth";
+
+const user = auth().currentUser;
+
+  class Profile extends React.Component{
+    constructor(props) {
+      super(props)
+      this.state = {
+          name: user.displayName,
+          email: user.email,
+          photoURL: user.photoURL,
+      }
+  }
 
   
-  const Profile = () =>{
-    return(
+componentDidUpdate() {
+  this._getCurrentUser();
+}
+ 
+  _getCurrentUser = async () => {
+    if (user != null) {
+        this.setState({
+            name: user.displayName,
+            email: user.email,
+            photoURL: user.photoURL
+        })
+    }
+}
+    
+
+    render(){
+      
+    return( 
         <View style={styles.container}>
           <View style={styles.ImageHolder}>
-              <Image
-              source={require('../assets/profile-pic.jpg')}
-              resizeMode={'contain'}
-              style={styles.Image}/> 
+          <Image
+        source={require('../assets/profile-pic.jpg')}
+        resizeMode={'contain'}
+        style={styles.Image}/>
           </View>
           <Text></Text>
           <View style={styles.inputContainer}>
             <View style={styles.iconStyle}>
               <Icon name='person' size={20} color="#730099" />
             </View>
-            <Text style={styles.input}>Rekha Ravi</Text>
+            <Text style={styles.input}>{this.state.name || "Add your name in edit section"}</Text>
           </View>
           <View style={styles.inputContainer}>
             <View style={styles.iconStyle}>
               <Icon name='phone' size={20} color="#730099" />
             </View>
-            <Text style={styles.input}>+918056224832</Text>
+            <Text style={styles.input}>{user.phoneNumber}</Text>
           </View>
           <View style={styles.inputContainer}>
             <View style={styles.iconStyle}>
               <Icon name='mail' size={20} color="#730099" />
             </View>
-            <Text style={styles.input}>rekharavi1997@gmail.com</Text>
+            <Text style={styles.input}>{this.state.email || "Add your email in email section"}</Text>
           </View>
+         
         </View>
+    
     );
-}
+}}
 export default Profile;
 
 const styles = StyleSheet.create({
     container: {
-        justifyContent: 'center',
+        justifyContent:'center',
         alignItems: 'center',
         padding: 20,
         paddingTop: 0,
@@ -59,7 +90,8 @@ const styles = StyleSheet.create({
         borderRadius: 50,
         borderWidth: 2,
         justifyContent:'center',
-        borderColor:'#e6e6e6'
+        borderColor:'#e6e6e6',
+        
         
     },
     Image: { 
